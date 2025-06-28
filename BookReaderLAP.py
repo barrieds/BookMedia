@@ -3,7 +3,7 @@ import cv2
 import requests
 
 #Test image, the actual input will be from the users camera
-bookimage = 'C:/Users/seamu/Documents/ComputerWork/kingofbirds.jpg'
+bookimage = 'kingofbirds.jpg'
 
 #This loads the image for OpenCV
 loaded_img = cv2.imread(bookimage)
