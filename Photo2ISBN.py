@@ -35,6 +35,8 @@ Identifiers = set()
 
 print("Showing Possible Books")
 
+count = 1
+
 #For loop to request the data using all of the combinations of queries
 for query in queries:
     r = requests.get(f'https://openlibrary.org/search.json?q={query}')
@@ -65,8 +67,14 @@ for query in queries:
         Identifiers.add(ISBN)
         #This adds the returned data to the dictonary
         PossibleBooks[title] = (author, ISBN)
+
+        count = count + 1
+
         #This is used to leave breathing room for the API requests
         time.sleep(0.5)
+
+        if count == 6:
+            break
 
 #This prints out the book titles received in a list format
 print("\nPossible Book List:\n")
